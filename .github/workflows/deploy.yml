@@ -37,7 +37,6 @@ jobs:
         run: npm run build
         env:
           NODE_ENV: production
-          VITE_BASE_PATH: /Raju-Portfolio/
 
       - name: Add .nojekyll file
         run: touch ./dist/.nojekyll
