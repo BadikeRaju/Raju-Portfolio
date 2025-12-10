@@ -39,6 +39,9 @@ jobs:
           NODE_ENV: production
           VITE_BASE_PATH: /Raju-Portfolio/
 
+      - name: Add .nojekyll file
+        run: touch ./dist/.nojekyll
+
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
 
@@ -46,9 +49,6 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: './dist'
-
-      - name: Add .nojekyll file
-        run: echo "" > ./dist/.nojekyll
 
       - name: Deploy to GitHub Pages
         id: deployment
