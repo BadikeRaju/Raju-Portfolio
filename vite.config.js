@@ -8,6 +8,6 @@ export default defineConfig({
     tailwindcss(),
     react()
   ],
-  base: process.env.VITE_BASE_PATH || "/Raju-Portfolio"
+  base: process.env.VITE_BASE_PATH || "/"
   // Use different base paths for development vs production
 })
