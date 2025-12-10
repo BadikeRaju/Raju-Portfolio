@@ -36,14 +36,8 @@ const ContactSection = () => {
   };
 
   const handleResumeDownload = () => {
-    // Update this path to match your resume file location in the public folder
-    const resumePath = `${import.meta.env.BASE_URL}/resume/Badike_Raju_resume.pdf`;
-    const link = document.createElement('a');
-    link.href = resumePath;
-    link.download = 'Badike_Raju_resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // Open Google Drive resume link in new tab
+    window.open('https://drive.google.com/file/d/136VvwADdlvZA4QjkaMh2ti-W9aZDYTzv/view?usp=sharing', '_blank');
   };
 
   const contactInfo = {

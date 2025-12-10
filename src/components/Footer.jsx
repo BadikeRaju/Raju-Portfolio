@@ -209,8 +209,9 @@ const Footer = () => {
                                 </motion.a>
 
                                 <motion.a
-                                    href={`${import.meta.env.BASE_URL}/resume/Badike_Raju_resume.pdf`}
-                                    download
+                                    href="https://drive.google.com/file/d/136VvwADdlvZA4QjkaMh2ti-W9aZDYTzv/view?usp=sharing"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="flex items-center gap-3 p-3 rounded-lg text-white/70 hover:text-white text-sm transition-all duration-300 group"
                                     style={{
                                         background: 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)',

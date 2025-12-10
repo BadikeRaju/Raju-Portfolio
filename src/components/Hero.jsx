@@ -76,7 +76,11 @@ const Hero = () => {
 
                     <div className="text-xl md:text-2xl text-gray-300 font-medium mb-6 font-mono">
                         <TextType
-                            text={["Software Engineer at BNP Paribas"]}
+                            text={[
+                                "Results-driven Software Engineer",
+                                "Full Stack & Cloud-Native Developer",
+                                "AI/ML & Microservices Enthusiast"
+                            ]}
                             typingSpeed={60}
                             pauseDuration={4000}
                             showCursor={true}
@@ -89,9 +93,11 @@ const Hero = () => {
 
                     <p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-lg font-medium"
                         style={{ fontFamily: "Inter, sans-serif", fontWeight: 500, letterSpacing: "0.025em" }}>
-                        Software Engineer at BNP Paribas with over 2 years of experience
-                        specializing in reconciliation workflows using IntelliMatch.
-                        Proficient in SQL & Python. Enthusiastic about CI/CD and DevOps tools.
+                        Results-driven Software Engineer with a strong background in full-stack
+                        development, cloud-native solutions, and AI-driven applications. Skilled
+                        at designing scalable systems, implementing microservices, optimizing
+                        performance, and leading teams to deliver high-impact projects under
+                        tight deadlines.
                     </p>
 
                     {/* Aceternity UI Animated Buttons */}
