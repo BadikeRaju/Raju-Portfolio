@@ -6,7 +6,7 @@ Modern, responsive portfolio for Badike Raju — Software Engineer with strength
 
 ## 🚀 Live Demo
 
-🔗 **[View Live Site](https://badikeraju.github.io/badike-portfolio/)** (update this link if you deploy elsewhere)
+🔗 **[View Live Site](https://badikeraju.github.io/Raju-Portfolio/)**
 
 ## ✨ Highlights
 
@@ -27,8 +27,8 @@ Modern, responsive portfolio for Badike Raju — Software Engineer with strength
 Prereqs: Node.js ≥ 16 and npm or yarn.
 
 ```bash
-git clone https://github.com/BadikeRaju/badike-portfolio.git
-cd badike-portfolio
+git clone https://github.com/BadikeRaju/Raju-Portfolio.git
+cd Raju-Portfolio
 npm install
 npm run dev
 ```
@@ -45,7 +45,7 @@ Visit `http://localhost:5173` during development.
 ## 🏗️ Project Structure
 
 ```
-badike-portfolio/
+Raju-Portfolio/
 ├── public/                 # Static assets (images, resume, fonts)
 ├── src/                    # React source
 │   ├── components/         # UI sections
@@ -61,7 +61,7 @@ badike-portfolio/
 `vite.config.js` sets the GitHub Pages base path:
 
 ```javascript
-base: process.env.VITE_BASE_PATH || "/badike-portfolio";
+base: process.env.VITE_BASE_PATH || "/Raju-Portfolio";
 ```
 
 Update `VITE_BASE_PATH` when deploying to a different path/domain.
