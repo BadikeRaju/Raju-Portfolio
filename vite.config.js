@@ -8,6 +8,6 @@ export default defineConfig({
     tailwindcss(),
     react()
   ],
-  base: process.env.VITE_BASE_PATH || "/badike-portfolio"
-  // Use different base paths for development vs production
+  base: process.env.VITE_BASE_PATH || "/"
+  // Use "/" for Vercel deployment, or set VITE_BASE_PATH env variable for other platforms
 })
