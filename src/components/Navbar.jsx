@@ -70,7 +70,7 @@ const Navbar = () => {
                 animation: 'gradientShift 3s ease-in-out infinite'
               }}
             >
-              Badike Raju
+              BR
             </span>
           </a>
 
