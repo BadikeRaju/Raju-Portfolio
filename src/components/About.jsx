@@ -84,26 +84,26 @@ const About = () => {
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.8 }}
           >
-            {/* First Paragraph with BNP Paribas Gradient */}
+            {/* First Paragraph introducing Badike Raju */}
             <div className="text-lg md:text-xl leading-relaxed font-semibold font-[Inter,sans-serif] text-gray-200 mb-6">
-              <span>Hi, I'm Saaketh, a passionate Software Engineer currently working at </span>
+              <span>Hi, I'm Badike Raju, a results-driven Software Engineer focused on </span>
               <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent font-bold">
-                BNP Paribas India Solutions
+                full-stack, cloud-native, and AI-powered solutions
               </span>
-              <span>, where I specialize in financial automation and reconciliation tools.</span>
+              <span>. I specialize in designing scalable systems, implementing microservices, and shipping reliable products under tight deadlines.</span>
             </div>
 
-            {/* Second Paragraph with Python/SQL and DevOps Gradients */}
+            {/* Second Paragraph with Tech & DevOps Gradients */}
             <div className="text-lg md:text-xl leading-relaxed font-medium font-[Inter,sans-serif] text-gray-200 mb-6">
               <span>I enjoy translating business needs into technical solutions. With a strong foundation in </span>
               <span className="bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 bg-clip-text text-transparent font-bold">
-                Python, SQL
+                Python, JavaScript, and Java
               </span>
-              <span>, and automation, I bring efficiency and precision to workflows while always exploring new tools in </span>
+              <span>, I build performant backends with Express.js, modern frontends with React, and data-driven systems with MongoDB/MySQL/Firebase. I regularly explore </span>
               <span className="bg-gradient-to-r from-orange-400 via-red-500 to-pink-500 bg-clip-text text-transparent font-bold">
                 DevOps
               </span>
-              <span> and CI/CD.</span>
+              <span> practices—Docker, CI/CD, and cloud—to deliver fast, dependable releases.</span>
             </div>
           </motion.div>
 
@@ -127,35 +127,34 @@ const About = () => {
                 round={false}
                 items={[
                   {
-                    title: "2+ Years Experience",
-                    description: "Hands-on experience with IntelliMatch, Admin & Recollector tools at BNP Paribas India Solutions.",
+                    title: "Full Stack Engineering",
+                    description: "Building responsive React frontends and scalable Node/Express services with clean APIs.",
                     id: 1,
-                    icon: "💼",
+                    icon: "💻",
                   },
                   {
-                    title: "Financial Systems Expert",
-                    description: "Building robust reconciliation workflows and automation solutions for banking operations.",
+                    title: "Cloud-Native Delivery",
+                    description: "Deploying on AWS/Firebase with CI/CD and Docker to keep releases fast and reliable.",
                     id: 2,
-                    icon: "🔄",
+                    icon: "☁️",
                   },
                   {
-                    title: "Python & SQL Developer",
-                    description: "Having fundamental knowledge in python for scripting and SQL for databases",
+                    title: "AI/ML & RAG",
+                    description: "Designing RAG pipelines, FAISS search, and GPT/Mistral integrations for real-time answers.",
                     id: 3,
-                    icon: "🐍",
-                    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png"
+                    icon: "🧠",
                   },
                   {
-                    title: "DevOps & CI/CD",
-                    description: "Currently exploring DevOps tools and CI/CD Pipelines.",
+                    title: "Data & Databases",
+                    description: "Hands-on with MongoDB, MySQL, and Firebase for resilient, query-friendly data layers.",
                     id: 4,
-                    icon: "⚙️",
+                    icon: "🗄️",
                   },
                   {
-                    title: "BNP Paribas Engineer",
-                    description: "Currently positioned as Associate Software Engineer - I.",
+                    title: "Team Leadership",
+                    description: "Coordinating multi-member efforts and keeping projects on track under tight deadlines.",
                     id: 5,
-                    icon: "🏦",
+                    icon: "🤝",
                   },
                 ]}
               />

@@ -1,262 +1,81 @@
-# 🌟 Saaketh's Portfolio
+# 🌟 Badike Raju's Portfolio
 
-A modern, responsive portfolio website showcasing my work, skills, and professional journey. Built with cutting-edge web technologies for optimal performance and user experience.
+Modern, responsive portfolio for Badike Raju — Software Engineer with strengths in full-stack development, cloud-native architectures, and AI/ML-driven solutions.
 
-![Portfolio Preview](https://github.com/saakethj/saaketh-portfolio/blob/master/public/images/Preview.png)
+![Portfolio Preview](public/images/Preview.png)
 
 ## 🚀 Live Demo
 
-🔗 **[View Live Site](https://www.saakethj.in/)**
+🔗 **[View Live Site](https://badikeraju.github.io/badike-portfolio/)** (update this link if you deploy elsewhere)
 
-## ✨ Features
+## ✨ Highlights
 
-- **Responsive Design** - Seamless experience across all devices
-- **Modern UI/UX** - Clean, professional, and visually appealing
-- **Fast Performance** - Optimized loading times with Vite
-- **Smooth Animations** - Enhanced user interactions
-- **Dynamic Components** - Reusable and maintainable code structure
-- **SEO Optimized** - Better search engine visibility
-- **Accessible** - WCAG compliant for all users
+- Full-stack focus: React frontends + Node/Express backends
+- Cloud & DevOps: AWS, Firebase, CI/CD, Docker
+- AI/ML: RAG, OpenCV, FAISS, GPT/Mistral integrations
+- Clean UI with Tailwind + Framer Motion animations
 
 ## 🛠️ Tech Stack
 
-### Core Technologies
-- **React 18** - Modern JavaScript library for building user interfaces
-- **Vite** - Next generation frontend tooling for lightning-fast development
-- **JavaScript ES6+** - Latest JavaScript features and syntax
+- **Frontend:** React 18, Tailwind CSS, Framer Motion
+- **Backend:** Node.js, Express.js
+- **Data:** MongoDB, MySQL, Firebase/Firestore
+- **Build:** Vite, ESLint
 
-### Styling & UI
-- **Tailwind CSS** - Utility-first CSS framework for rapid UI development
-- **CSS3** - Modern styling with Flexbox and Grid
-- **Responsive Design** - Mobile-first approach
+## 📦 Setup
 
-### Build Tools & Development
-- **Vite** - Build tool and dev server
-- **ESLint** - Code linting for consistent code quality
-- **PostCSS** - Tool for transforming CSS with JavaScript
-- **Autoprefixer** - Automatic vendor prefix handling
+Prereqs: Node.js ≥ 16 and npm or yarn.
 
-### Deployment & Hosting
-- **GitHub Pages** - Static site hosting
-- **GitHub Actions** - Automated deployment pipeline
+```bash
+git clone https://github.com/BadikeRaju/badike-portfolio.git
+cd badike-portfolio
+npm install
+npm run dev
+```
 
-## 📦 Installation & Setup
-
-### Prerequisites
-- Node.js (version 16 or higher)
-- npm or yarn package manager
-- Git
-
-### Quick Start
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/saakethj/saaketh-portfolio.git
-   cd saaketh-portfolio
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-3. **Start development server**
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
-
-4. **Open in browser**
-   Navigate to `http://localhost:5173` (default Vite port)
+Visit `http://localhost:5173` during development.
 
 ### Available Scripts
 
-- `npm run dev` - Start development server with hot reload
-- `npm run build` - Build production-ready application
-- `npm run preview` - Preview production build locally
-- `npm run lint` - Run ESLint for code quality checks
+- `npm run dev` – start dev server with HMR
+- `npm run build` – production build
+- `npm run preview` – preview the prod build locally
+- `npm run lint` – run ESLint
 
 ## 🏗️ Project Structure
 
 ```
-saaketh-portfolio/
-├── public/                 # Static assets
-│   ├── favicon.ico
-│   └── images/            # Image assets
-├── src/                   # Source code
-│   ├── components/        # Reusable React components
-│   │   ├── Header/        # Navigation component
-│   │   ├── Hero/          # Landing section
-│   │   ├── About/         # About me section
-│   │   ├── Projects/      # Portfolio projects
-│   │   ├── Skills/        # Technical skills
-│   │   ├── Experience/    # Work experience
-│   │   ├── Contact/       # Contact form
-│   │   └── Footer/        # Footer component
-│   ├── assets/           # Static assets (images, icons)
-│   ├── hooks/            # Custom React hooks
-│   ├── utils/            # Utility functions
-│   ├── styles/           # Global styles and Tailwind config
-│   ├── App.jsx           # Main application component
-│   ├── main.jsx          # Application entry point
-│   └── index.css         # Global CSS and Tailwind imports
-├── .gitignore            # Git ignore rules
-├── package.json          # Dependencies and scripts
-├── vite.config.js        # Vite configuration
-├── tailwind.config.js    # Tailwind CSS configuration
-├── postcss.config.js     # PostCSS configuration
-└── README.md             # Project documentation
+badike-portfolio/
+├── public/                 # Static assets (images, resume, fonts)
+├── src/                    # React source
+│   ├── components/         # UI sections
+│   ├── App.jsx             # Root layout
+│   └── main.jsx            # Entry point
+├── package.json            # Dependencies & scripts
+├── vite.config.js          # Vite configuration
+└── README.md               # Documentation
 ```
-
-## 🎨 Components Overview
-
-### Core Components
-
-#### 1. **Header/Navigation**
-- Responsive navigation bar
-- Smooth scroll to sections
-- Mobile-friendly hamburger menu
-- Active section highlighting
-
-#### 2. **Hero Section**
-- Eye-catching introduction
-- Animated text effects
-- Call-to-action buttons
-- Professional headshot
-
-#### 3. **About Section**
-- Personal introduction
-- Professional background
-- Skills overview
-- Downloadable resume
-
-#### 4. **Projects Portfolio**
-- Interactive project cards
-- Technology stack display
-- Live demo and code links
-- Responsive grid layout
-
-#### 5. **Skills Section**
-- Technical skills visualization
-- Proficiency indicators
-- Technology icons
-- Categorized skill sets
-
-#### 6. **Experience Timeline**
-- Professional experience
-- Education background
-- Achievement highlights
-- Interactive timeline
-
-#### 7. **Contact Section**
-- Contact form with validation
-- Social media links
-- Professional email
-- Location information
-
-### Component Features
-
-- **Modular Architecture** - Each component is self-contained and reusable
-- **Props-driven** - Configurable components for easy customization
-- **Responsive Design** - All components adapt to different screen sizes
-- **Accessible** - ARIA labels and semantic HTML for screen readers
-- **Performance Optimized** - Lazy loading and code splitting where applicable
-
-## 🎯 Animations & Interactions
-
-- **Smooth Scrolling** - Enhanced navigation experience
-- **Fade-in Effects** - Progressive content revelation
-- **Hover Animations** - Interactive element feedback
-- **Typing Animation** - Dynamic text in hero section
-- **Parallax Effects** - Subtle background movements
-- **Loading Animations** - Smooth content transitions
-
-## 📱 Responsive Design
-
-- **Mobile First** - Optimized for mobile devices
-- **Tablet Compatible** - Perfect layout for medium screens
-- **Desktop Enhanced** - Full-featured desktop experience
-- **Cross-browser Compatible** - Works across all modern browsers
 
 ## 🔧 Configuration
 
-### Tailwind CSS
-The project uses Tailwind CSS for styling. Configuration can be found in `tailwind.config.js`:
+`vite.config.js` sets the GitHub Pages base path:
 
 ```javascript
-// Custom theme extensions and utility classes
-module.exports = {
-  content: ['./index.html', './src/**/*.{js,jsx}'],
-  theme: {
-    extend: {
-      // Custom colors, fonts, spacing, etc.
-    },
-  },
-  plugins: [],
-}
+base: process.env.VITE_BASE_PATH || "/badike-portfolio";
 ```
 
-### Vite Configuration
-Build tool configuration in `vite.config.js`:
-
-```javascript
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-
-export default defineConfig({
-  plugins: [react()],
-  base: '/saaketh-portfolio/', // GitHub Pages base path
-})
-```
+Update `VITE_BASE_PATH` when deploying to a different path/domain.
 
 ## 🚀 Deployment
 
-### GitHub Pages
-
-This project is configured for automatic deployment to GitHub Pages using GitHub Actions.
-
-1. **Enable GitHub Pages** in repository settings
-2. **Set source** to GitHub Actions
-3. **Push to main branch** - Automatic deployment triggers
-
-### Manual Build
-
-```bash
-npm run build
-npm run preview  # Test build locally
-```
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+1) Build: `npm run build`  
+2) Deploy `dist/` to your host (GitHub Pages, Vercel, etc.).  
+For GitHub Pages, keep the base path in sync with the repo name.
 
 ## 📧 Contact
 
-**Saaketh J**
-- Portfolio: [https://saakethj.github.io/saaketh-portfolio/](https://saakethj.github.io/saaketh-portfolio/)
-- GitHub: [@saakethj](https://github.com/saakethj)
-- Email: [your.email@example.com](mailto:saaketh.jella123@gmail.com)
+- **Email:** rajubadike23@gmail.com
+- **LinkedIn:** https://www.linkedin.com/in/raju-badike
+- **GitHub:** https://github.com/BadikeRaju
 
-## 🙏 Acknowledgments
-
-- React team for the amazing library
-- Vite team for the excellent build tool
-- Tailwind CSS for the utility-first framework
-- Open source community for inspiration and resources
-
----
-
-⭐ **If you found this project helpful, please consider giving it a star!**
+If this project helped, a ⭐ is always appreciated!

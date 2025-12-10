@@ -1,62 +1,40 @@
 // FIXED Experience.jsx
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import ExperienceAnimatedBackground from './ExperienceAnimatedBackground';
 import { TextGenerateEffect } from './TextGenerateEffect';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 const experiences = [
   {
     id: 1,
-    company: "BNP Paribas ISPL",
-    role: "Software Engineer Intern",
-    duration: "Jan 2023 – Jul 2023",
-    period: "2023",
+    company: "Techcurators",
+    role: "Technical Project Associate (Intern)",
+    duration: "Feb 2024 – Jul 2025",
+    period: "2024-25",
     description: [
-      "Joined as a software intern in the Reconciliation team.",
-      "Learned banking reconciliation tools like IntelliMatch, Admin,Recollector.",
-      "Worked as junior developer in migration and validation of reconciliation rules and processes.",
-      "Exposed to pythin scripting to handle automation tasks",
-      "Gained hands-on experience with cash reconciliation workflows, SQL queries, and batch processing."
+      "Contributed to designing and developing an internal content management and project tracking platform.",
+      "Streamlined workflows and monitored progress across teams.",
+      "Built and optimized a multi-model content generation system leveraging GPT-4, GPT-3.5, and fine-tuned models.",
+      "Achieved an 80% reduction in content creation time.",
+      "Engineered a Retrieval-Augmented Generation (RAG) chatbot using hybrid retrieval (BM25 + Word2Vec).",
+      "Enhanced enterprise knowledge search, reducing repeated queries by 40%.",
+      "Collaborated in agile sprints, participated in code reviews, and supported deployments."
     ]
   },
   {
     id: 2,
-    company: "BNP Paribas ISPL",
-    role: "Associate Software Engineer",
-    duration: "Jul 2023 – Mar 2025",
-    period: "2023-25",
-    description: [
-      "Worked on reconciliation automation using the IntelliMatch tool.",
-      "Handled file flow migrations, scripts automation",
-      "Developed python scripts for data validation and reconciliation.",
-      "Creatied new reconciliation rules and optimized existing ones.",
-    ]
-  },
-  {
-    id: 3,
-    company: "BNP Paribas ISPL",
-    role: "Software Engineer",
-    duration: "Jan 2025 – Aug 2025",
-    period: "2025",
-    description: [
-      "Promoted to Software Engineer role with increased responsibilities.",
-      "Leading reconciliation automation projects and mentoring junior developers.",
-      "Implementing advanced Python automation solutions for financial data processing.",
-      "Optimizing existing workflows and developing new reconciliation strategies.",
-      "Scheduled and maintained jobs using AutoSys."
-
-    ]
-  },
-  {
-    id: 4,
-    company: "IBM",
-    role: "Incoming Software Engineer",
-    duration: "Sep 2025 – Present",
+    company: "Techcurators",
+    role: "Technical Project Associate (Full-time)",
+    duration: "Jul 2025 – Present",
     period: "2025 - Present",
     description: [
-      "Offer accepted for a full-time role at IBM (exact domain TBD).",
-      "Looking forward to exploring opportunities in cloud, devops, and intelligent automation.",
-      "Preparing to transition into enterprise-scale software development."
+      "Leading development of internal content management and project tracking platform.",
+      "Building and optimizing multi-model content generation systems with GPT-4, GPT-3.5, and fine-tuned models.",
+      "Engineering RAG chatbots with hybrid retrieval for enhanced enterprise knowledge search.",
+      "Collaborating in agile sprints and participating in code reviews.",
+      "Supporting deployments and ensuring software quality and delivery.",
+      "Mentoring team members and contributing to technical decision-making."
     ]
   }
 ];
@@ -64,12 +42,10 @@ const experiences = [
 const Experience = () => {
   const containerRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isInExperience, setIsInExperience] = useState(false);
-  const [canExitSection, setCanExitSection] = useState(false);
-  const [scrollDirection, setScrollDirection] = useState('down');
   const [isMobile, setIsMobile] = useState(false);
-  const isScrollingRef = useRef(false);
-  const touchStartYRef = useRef(0);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
+  const [isDragging, setIsDragging] = useState(false);
 
 
   // Mobile detection
@@ -101,134 +77,77 @@ const Experience = () => {
     document.head.appendChild(style);
   }, []);
 
-  // Scroll handler
-  useEffect(() => {
-    const handleScroll = (e) => {
-      if (!isInExperience || isScrollingRef.current) return;
-      e.preventDefault();
+  // Navigation functions
+  const goToNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % experiences.length);
+  };
 
-      isScrollingRef.current = true;
-      let delta = 0;
+  const goToPrevious = () => {
+    setCurrentIndex((prev) => (prev - 1 + experiences.length) % experiences.length);
+  };
 
-      if (e.type === 'wheel') {
-        delta = e.deltaY;
-      } else if (e.type === 'touchmove') {
-        const currentY = e.touches[0].clientY;
-        delta = touchStartYRef.current - currentY;
+  // Swipe handlers
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
 
-        const scrollDown = delta > 0;
-        const touchZone = e.touches[0].target.getBoundingClientRect();
-        const screenHeight = window.innerHeight;
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
 
-        if (
-          currentIndex === experiences.length - 1 &&
-          scrollDown &&
-          touchZone.bottom > screenHeight - 100
-        ) {
-          setIsInExperience(false);
-          document.body.style.overflow = 'auto';
-          return;
-        }
-      }
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    
+    const distance = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 50;
 
-      const scrollDown = delta > 0;
-      setScrollDirection(scrollDown ? 'down' : 'up');
-
-      if (scrollDown) {
-        if (currentIndex < experiences.length - 1) {
-          setCurrentIndex(prev => prev + 1);
-        } else if (!canExitSection) {
-          setCanExitSection(true);
-          setTimeout(() => {
-            setIsInExperience(false);
-            setCanExitSection(false);
-            document.body.style.overflow = 'auto';
-          }, 500);
-        }
-      } else {
-        if (currentIndex > 0) {
-          setCurrentIndex(prev => prev - 1);
-        } else if (!canExitSection) {
-          setCanExitSection(true);
-          setTimeout(() => {
-            setIsInExperience(false);
-            setCanExitSection(false);
-            document.body.style.overflow = 'auto';
-          }, 500);
-        }
-      }
-
-      setTimeout(() => {
-        isScrollingRef.current = false;
-      }, 700);
-    };
-
-    // ✅ define outside of handleScroll
-    const handleTouchStart = (e) => {
-      touchStartYRef.current = e.touches[0].clientY;
-    };
-
-    if (isInExperience) {
-      document.body.style.overflow = 'hidden';
-      window.addEventListener('wheel', handleScroll, { passive: false });
-      window.addEventListener('touchmove', handleScroll, { passive: false });
-      window.addEventListener('touchstart', handleTouchStart, { passive: true }); // ✅ added correctly
-    } else {
-      document.body.style.overflow = 'auto';
+    if (distance > minSwipeDistance) {
+      goToNext();
+    } else if (distance < -minSwipeDistance) {
+      goToPrevious();
     }
 
-    return () => {
-      window.removeEventListener('wheel', handleScroll);
-      window.removeEventListener('touchmove', handleScroll);
-      window.removeEventListener('touchstart', handleTouchStart); // ✅ cleanup
-      document.body.style.overflow = 'auto';
-    };
-  }, [isInExperience, currentIndex, canExitSection]);
+    touchStartX.current = 0;
+    touchEndX.current = 0;
+  };
 
+  // Mouse drag handlers
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    touchStartX.current = e.clientX;
+  };
 
-  // Entry detection
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio > 0.7) {
-            if (!isInExperience) {
-              setIsInExperience(true);
-              const scrollY = window.scrollY;
-              const entryTop = entry.target.offsetTop;
-              setCurrentIndex(scrollY < entryTop ? 0 : experiences.length - 1);
-            }
-          } else if (entry.intersectionRatio < 0.3 && isInExperience) {
-            setIsInExperience(false);
-          }
-        });
-      },
-      {
-        threshold: [0.3, 0.7],
-        rootMargin: '0px'
-      }
-    );
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    touchEndX.current = e.clientX;
+  };
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
+  const handleMouseUp = () => {
+    if (!isDragging) return;
+    
+    const distance = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 50;
+
+    if (distance > minSwipeDistance) {
+      goToNext();
+    } else if (distance < -minSwipeDistance) {
+      goToPrevious();
     }
 
-    return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
-      }
-    };
-  }, [isInExperience]);
+    setIsDragging(false);
+    touchStartX.current = 0;
+    touchEndX.current = 0;
+  };
 
-  const ExperienceCard = ({ exp, isActive, direction }) => (
+  const ExperienceCard = ({ exp, isActive }) => (
     <AnimatePresence mode="wait">
       {isActive && (
         <motion.div
           key={exp.id}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -30 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -100 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="w-full max-w-5xl mx-auto px-6"
         >
           <div className="flex flex-col lg:flex-row lg:gap-16 items-center lg:items-start">
@@ -371,98 +290,138 @@ const Experience = () => {
     <section
       ref={containerRef}
       id="experience"
-      className="relative bg-black text-white w-full overflow-hidden min-h-screen"
+      className="relative bg-black text-white w-full overflow-hidden py-20"
       style={{ fontFamily: "'SF Pro Display', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" }}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseUp}
     >
       <ExperienceAnimatedBackground className="z-0" />
-      <div className="relative z-10 h-screen flex flex-col">
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="pt-20 pb-10 flex-shrink-0">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="text-center px-6"
-          >
-            <div className="text-4xl md:text-5xl font-bold mb-6">
-              <div className="flex flex-wrap justify-center items-baseline gap-3 md:gap-4">
-                <TextGenerateEffect words="My" className="text-white" filter={true} duration={0.8} />
-                <motion.span
-                  className="inline-block font-bold"
-                  style={{
-                    background: 'linear-gradient(90deg, #ff7b54, #ffb347, #ffd700, #4fc3f7, #42a5f5)',
-                    backgroundClip: 'text',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundSize: '200% 200%'
-                  }}
-                  animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  Experience
-                </motion.span>
-              </div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="text-center mb-16"
+        >
+          <div className="text-4xl md:text-5xl font-bold mb-6">
+            <div className="flex flex-wrap justify-center items-baseline gap-3 md:gap-4">
+              <TextGenerateEffect words="My" className="text-white" filter={true} duration={0.8} />
+              <motion.span
+                className="inline-block font-bold"
+                style={{
+                  background: 'linear-gradient(90deg, #ff7b54, #ffb347, #ffd700, #4fc3f7, #42a5f5)',
+                  backgroundClip: 'text',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundSize: '200% 200%'
+                }}
+                animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              >
+                Experience
+              </motion.span>
             </div>
-            <p className="text-white/60 max-w-2xl mx-auto text-lg md:text-xl">
-              My professional journey in software development
-            </p>
-          </motion.div>
+          </div>
+          <p className="text-white/60 max-w-2xl mx-auto text-lg md:text-xl">
+            My professional journey in software development
+          </p>
+        </motion.div>
+
+        {/* Experience Display with Navigation */}
+        <div className="relative">
+          {/* Navigation Arrows */}
+          <motion.button
+            onClick={goToPrevious}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 flex items-center justify-center transition-all duration-300 group"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            aria-label="Previous experience"
+          >
+            <FiChevronLeft className="w-6 h-6 md:w-7 md:h-7 text-white group-hover:text-white/90 transition-colors" />
+          </motion.button>
+
+          <motion.button
+            onClick={goToNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 flex items-center justify-center transition-all duration-300 group"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            aria-label="Next experience"
+          >
+            <FiChevronRight className="w-6 h-6 md:w-7 md:h-7 text-white group-hover:text-white/90 transition-colors" />
+          </motion.button>
+
+          {/* Experience Card Container */}
+          <div className="px-16 md:px-20">
+            <ExperienceCard
+              exp={experiences[currentIndex]}
+              isActive={true}
+            />
+          </div>
         </div>
 
-        {/* Experience Display */}
-        <div className="flex-1 flex items-start justify-center pt-12 min-h-0">
-          {isInExperience ? (
-            <div className="w-full" style={{ minHeight: '60vh' }}>
-              <ExperienceCard
-                exp={experiences[currentIndex]}
-                isActive={true}
-                direction={scrollDirection}
-              />
-            </div>
-          ) : (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center text-white/60 flex-1 flex items-center justify-center"
-            >
-              <p className="text-lg">Scroll to explore my experience</p>
-            </motion.div>
-          )}
-        </div>
-
-        {/* Scroll Hints */}
-        <div className="flex-shrink-0 pb-8">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5, duration: 0.5 }}
-            className="flex justify-center items-center gap-4"
-          >
-            <div className="flex items-center gap-2 bg-black/30 backdrop-blur-sm rounded-full px-4 py-2 border border-white/10">
-              <span className="text-white/60 text-sm">Scroll to navigate</span>
-              <motion.div
-                animate={{ y: [0, 3, 0], opacity: [0.5, 1, 0.5] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                className="w-1.5 h-1.5 rounded-full bg-white/60"
-              />
-            </div>
-            <div className="flex gap-2">
-              {experiences.map((_, index) => (
-                <motion.div
-                  key={index}
-                  className="w-2 h-2 rounded-full transition-all duration-300"
-                  style={{
-                    background: index === currentIndex ? '#ffffff' : 'rgba(255,255,255,0.3)'
-                  }}
-                  animate={{
-                    scale: index === currentIndex ? 1.2 : 1
-                  }}
+        {/* Navigation Dots and Swipe Hint */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          className="flex flex-col items-center gap-4 mt-12"
+        >
+          {/* Dots Indicator */}
+          <div className="flex gap-3 items-center">
+            {experiences.map((_, index) => (
+              <motion.button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className="relative"
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+                aria-label={`Go to experience ${index + 1}`}
+              >
+                <div
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentIndex
+                      ? 'bg-white scale-125'
+                      : 'bg-white/30 hover:bg-white/50'
+                  }`}
                 />
-              ))}
-            </div>
-          </motion.div>
-        </div>
+                {index === currentIndex && (
+                  <motion.div
+                    className="absolute inset-0 rounded-full border-2 border-white"
+                    initial={{ scale: 1, opacity: 0.5 }}
+                    animate={{ scale: 1.5, opacity: 0 }}
+                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeOut" }}
+                  />
+                )}
+              </motion.button>
+            ))}
+          </div>
+
+          {/* Swipe Hint */}
+          <div className="flex items-center gap-2 text-white/50 text-sm">
+            <span className="hidden md:inline">Swipe left/right or use arrows to navigate</span>
+            <span className="md:hidden">Swipe to navigate</span>
+            <motion.div
+              animate={{ x: [0, 5, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              className="flex gap-1"
+            >
+              <span>←</span>
+              <span>→</span>
+            </motion.div>
+          </div>
+
+          {/* Experience Counter */}
+          <div className="text-white/40 text-xs mt-2">
+            {currentIndex + 1} / {experiences.length}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -37,22 +37,22 @@ const ContactSection = () => {
 
   const handleResumeDownload = () => {
     // Update this path to match your resume file location in the public folder
-    const resumePath = `${import.meta.env.BASE_URL}/resume/Saaketh_resume.pdf`;
+    const resumePath = `${import.meta.env.BASE_URL}/resume/Badike_Raju_resume.pdf`;
     const link = document.createElement('a');
     link.href = resumePath;
-    link.download = 'Saaketh_resume.pdf';
+    link.download = 'Badike_Raju_resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
   const contactInfo = {
-    email: "saaketh.jella123@gmail.com",
-    phone: "+91-7288942007",
-    location: "Mumbai, Maharashtra",
+    email: "rajubadike23@gmail.com",
+    phone: "+91-93475-38054",
+    location: "Chennai, India",
     timezone: "GMT +5:30",
-    linkedin: "https://www.linkedin.com/in/jellasaaketh/",
-    github: "https://github.com/saakethj",
+    linkedin: "https://www.linkedin.com/in/raju-badike",
+    github: "https://github.com/BadikeRaju",
     status: "Available for work",
     workType: "Remote/Hybrid OK"
   };
@@ -486,11 +486,11 @@ const ContactSection = () => {
                     whileTap={{ scale: 0.98 }}
                   >
                     <FiDownload className="text-orange-400 flex-shrink-0 text-lg" />
-                    <span className="text-white/90 text-sm font-medium">→ Resume.pdf</span>
+                    <span className="text-white/90 text-sm font-medium">→ Badike_Raju_resume.pdf</span>
                     <div className="ml-auto text-white/50 group-hover:text-white/80 group-hover:scale-110 transition-all">⬇️</div>
                   </motion.button>
                   <motion.a
-                    href="#"
+                    href={import.meta.env.BASE_URL || "/"}
                     className="group flex items-center gap-3 p-4 rounded-xl border border-white/20 hover:border-white/30 transition-all duration-300"
                     style={{
                       background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',

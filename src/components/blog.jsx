@@ -48,9 +48,7 @@ const BlogSection = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0.2 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className={`bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-300 group cursor-pointer ${
-        post.featured ? 'lg:col-span-2' : ''
-      }`}
+      className="bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-300 group cursor-pointer"
       style={{
         background: 'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%)',
         backdropFilter: 'blur(20px)',
@@ -62,79 +60,65 @@ const BlogSection = () => {
         boxShadow: '0 12px 40px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.2)'
       }}
     >
-      {/* Featured Badge */}
-      {post.featured && (
-        <div className="absolute top-4 left-4 z-10">
-          <span className="px-3 py-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full text-xs font-semibold text-white">
-            Featured
-          </span>
-        </div>
-      )}
-
       {/* Content */}
-      <div className="p-6">
-        {/* Category & Meta */}
+      <div className="p-6 flex flex-col h-full">
+        {/* Category & Meta - Top Row */}
         <div className="flex items-center justify-between mb-4">
           <span 
-            className="px-3 py-1 rounded-full text-xs font-medium border"
+            className="px-3 py-1 rounded-full text-xs font-medium"
             style={{ 
               backgroundColor: `${post.color}20`,
-              borderColor: `${post.color}40`,
               color: post.color 
             }}
           >
             {post.category}
           </span>
-          <div className="flex items-center gap-4 text-white/60 text-sm">
+          <div className="flex items-center gap-3 text-white/60 text-xs">
             <div className="flex items-center gap-1">
               <FiCalendar className="w-3 h-3" />
-              {post.date}
+              <span>{post.date}</span>
             </div>
             <div className="flex items-center gap-1">
               <FiClock className="w-3 h-3" />
-              {post.readTime}
+              <span>{post.readTime}</span>
             </div>
           </div>
         </div>
 
         {/* Title */}
-        <h3 className={`font-bold text-white mb-3 transition-all duration-300 ${
-          post.featured ? 'text-2xl md:text-3xl' : 'text-xl'
-        }`}>
+        <h3 className="font-bold text-white mb-3 text-lg md:text-xl leading-tight">
           {post.title}
         </h3>
 
         {/* Excerpt */}
-        <p className={`text-white/70 mb-4 leading-relaxed ${
-          post.featured ? 'text-base md:text-lg' : 'text-sm'
-        }`}>
+        <p className="text-white/70 mb-4 leading-relaxed text-sm flex-grow">
           {post.excerpt}
         </p>
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-4">
-          {post.tags.slice(0, post.featured ? 4 : 3).map((tag, index) => (
+          {post.tags.map((tag, tagIndex) => (
             <span 
-              key={index}
-              className="px-2 py-1 bg-white/10 rounded-md text-xs text-white/80 hover:bg-white/20 transition-colors duration-200"
+              key={tagIndex}
+              className="px-2 py-1 bg-white/10 rounded text-xs text-white/80 hover:bg-white/20 transition-colors duration-200"
             >
               #{tag}
             </span>
           ))}
         </div>
 
-        {/* Read More */}
-        <div className="flex items-center justify-between">
+        {/* Read More & Type - Bottom Row */}
+        <div className="flex items-center justify-between mt-auto pt-2">
           <motion.button
-            className="flex items-center gap-2 text-white/80 hover:text-white font-medium group-hover:gap-3 transition-all duration-300"
-            whileHover={{ x: 5 }}
+            className="flex items-center gap-2 text-white/80 hover:text-white font-medium transition-all duration-300"
+            whileHover={{ x: 3 }}
           >
-            Read More
+            <span>Read More</span>
             <FiArrowRight className="w-4 h-4" />
           </motion.button>
           <div className="flex items-center gap-2 text-white/60">
             <FiBookOpen className="w-4 h-4" />
-            <span className="text-sm">Technical</span>
+            <span className="text-xs">Technical</span>
           </div>
         </div>
       </div>

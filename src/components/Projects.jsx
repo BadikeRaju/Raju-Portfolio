@@ -20,123 +20,153 @@ import {
 const projectsData = [
     {
         id: 1,
-        title: "Apparel Classifier",
-        category: "Machine Learning",
-        period: "Jan 2021 - May 2021",
+        title: "Context Fusion: RAG-Based Knowledge Retrieval Application",
+        category: "AI/ML · RAG",
+        period: "May 2025 - June 2025",
         status: "Completed",
-        type: "Academic",
-        description: "Apparel Classifier is a neural network model that classifies grayscale images of size (28X28)pixels and provides which category of clothing like shirts, T-shirts, Handbags e.tc. This model uses fasion dataset collected from various sources containing images of clothing('Footwear', 'Handbags', 'Shirts', 'T-shirts'). Te dataset has a total o 10,714 images in total.",
-        longDescription: "Apparel Classifier is a neural network model that classifies grayscale images of size (28X28)pixels and provides which category of clothing like shirts, T-shirts, Handbags e.tc. This model uses fasion dataset collected from various sources containing images of clothing('Footwear', 'Handbags', 'Shirts', 'T-shirts'). Te dataset has a total o 10,714 images in total",
-        technologies: ["Python", "TensorFlow", "OpenCV", "Pandas", "NumPy", "Matplotlib"],
+        type: "Professional",
+        description: "Developed a MistralRAG Chatbot for context-aware responses by integrating Retrieval-Augmented Generation (RAG) with the Mistral API.",
+        longDescription: "Developed a MistralRAG Chatbot for context-aware responses by integrating Retrieval-Augmented Generation (RAG) with the Mistral API. Implemented hybrid retrieval using Annoy, BM25, TF-IDF, and Word2Vec for semantic and keyword-based search. Designed an interactive Streamlit web interface for document upload, configuration, and conversational interaction. Featured document reranking based on similarity scores and detailed display of retrieved context for enhanced user transparency.",
+        technologies: ["Mistral API", "Python", "Streamlit", "Annoy", "BM25", "TF-IDF", "Word2Vec"],
         skills: [
-            { name: "Python", level: 90 },
-            { name: "TensorFlow", level: 85 },
-            { name: "Computer Vision", level: 80 },
-            { name: "Data Science", level: 85 }
+            { name: "Python", level: 92 },
+            { name: "RAG & Retrieval", level: 90 },
+            { name: "Streamlit", level: 85 },
+            { name: "Vector Databases", level: 88 }
         ],
         achievements: [
-            "85% classification accuracy achieved",
-            "Real-time image processing capability",
-            "Custom CNN architecture design",
-            "Comprehensive data preprocessing pipeline"
+            "Implemented hybrid retrieval using Annoy, BM25, TF-IDF, and Word2Vec",
+            "Designed interactive Streamlit web interface for document upload and configuration",
+            "Featured document reranking based on similarity scores",
+            "Enhanced user transparency with detailed display of retrieved context"
         ],
         links: {
-            github: "https://github.com/saakethj/Apparel-Classifier/tree/master",
-            demo: "https://github.com/saakethj/Apparel-Classifier/tree/master",
-            documentation: "https://github.com/saakethj/Apparel-Classifier/blob/master/README.md"
+            github: "https://github.com/BadikeRaju/Context-Fusion-RAG",
+            demo: null,
+            documentation: "https://ieeexplore.ieee.org/abstract/document/11081255"
         },
-        color: "#8b5cf6", // Purple theme for ML
+        color: "#8b5cf6",
         gradient: "from-purple-500 to-violet-600"
     },
     {
         id: 2,
-        title: "Medical Store Management",
-        category: "Full Stack Development",
-        period: "Mar 2022 - May 2022",
-        status: "Completed",
-        type: "Academic",
-        description: "A comprehensive web application for pharmacy inventory management and billing system. Features real-time inventory tracking, automated billing, and customer management.",
-        longDescription: "Medical is a dekstop application created using java and java swing packages. It lets users to enter medicine details. Admin can add, update & delete details of a particular medicine. If a medicine is being billed. It shows the medicine details and the price everything.",
-        technologies: ["Jaba", "Spring Boot", "Swing Package", "SQL"],
-        skills: [
-            { name: "Java", level: 88 },
-            { name: "Spring Boot", level: 82 },
-            { name: "Swing Package", level: 85 },
-        ],
-        achievements: [
-            "Complete CRUD operations implementation",
-            "Real-time inventory updates",
-            "Secure authentication system",
-            "Responsive design for all devices"
-        ],
-        links: {
-            github: "https://github.com/saakethj/Medical-store",
-            demo: "https://github.com/saakethj/Medical-store",
-            documentation: "https://github.com/saakethj/Medical-store"
-        },
-        color: "#10b981", // Green theme for healthcare
-        gradient: "from-emerald-500 to-teal-600"
-    },
-    {
-        id: 3,
-        title: "Reconciliation Tool Migration",
-        category: "FinTech Development",
-        period: "Feb 2025 - Jun 2025",
-        status: "In Production",
+        title: "CoFlux - Real-time Collaborative Editor",
+        category: "Full Stack · Real-time Collaboration",
+        period: "Sept 2025 - Present",
+        status: "In Progress",
         type: "Professional",
-        description: "Leading the migration of legacy reconciliation tools to IntelliMatch platform at BNP Paribas. Handling complex financial data processing and automation workflows.",
-        longDescription: "Woeked as a software developer in deploying cash and trade reocniliation migration from legacy system to IntelliMatch. Developed and implemented automated reconciliation workflows, ensuring data integrity and compliance with financial regulations.",
-        technologies: ["Python", "SQL", "IntelliMatch", "AutoSys", "SWIFT", "Batch Processing"],
+        description: "Engineered a full-stack, real-time collaborative editor with offline capabilities, leveraging React, Node.js, Express, and MongoDB.",
+        longDescription: "Engineered a full-stack, real-time collaborative editor with offline capabilities, leveraging React, Node.js, Express, and MongoDB. Implemented CRDT-based synchronization (Yjs) via WebSockets for conflict-free, multi-user concurrent editing and presence systems. Developed an offline-first architecture with IndexedDB for local persistence, ensuring seamless sync on reconnection. Designed a version control system for document snapshots, change tracking, and rollback capabilities.",
+        technologies: ["React", "Node.js", "Express", "MongoDB", "Yjs", "WebSockets", "Lexical", "IndexedDB"],
         skills: [
-            { name: "Python", level: 92 },
-            { name: "SQL", level: 88 },
-            { name: "IntelliMatch", level: 85 },
-            { name: "Data Migration", level: 90 }
+            { name: "React", level: 92 },
+            { name: "Node.js & Express", level: 90 },
+            { name: "CRDT & Yjs", level: 88 },
+            { name: "WebSockets", level: 85 }
         ],
         achievements: [
-            "Successful legacy system migration",
-            "Automated reconciliation workflows",
-            "Enhanced data processing efficiency",
-            "SWIFT message handling implementation"
+            "Implemented CRDT-based synchronization (Yjs) via WebSockets for conflict-free editing",
+            "Developed offline-first architecture with IndexedDB for local persistence",
+            "Designed version control system for document snapshots and rollback capabilities",
+            "Built presence systems for real-time multi-user collaboration"
         ],
         links: {
-            github: null, // Private/Professional
+            github: "https://github.com/BadikeRaju/CoFlux",
             demo: null,
             documentation: null
         },
-        color: "#f59e0b", // Amber theme for fintech
-        gradient: "from-amber-500 to-orange-600"
+        color: "#10b981",
+        gradient: "from-emerald-500 to-teal-600"
     },
     {
         id: 4,
-        title: "GameVault",
-        category: "Personal Project",
-        period: "Apr 2025 - May 2025",
-        status: "In Development",
-        type: " Personal",
-        description: "My personal dashbaord created to view my gaming stats and achievements. It is a web application that allows users to track their gaming progress, achievements, and statistics across multiple platforms.",
-        longDescription: "My personal dashbaord created to view my gaming stats and achievements. It is a web application that allows users to track their gaming progress, achievements, and statistics across multiple platforms.",
-        technologies: ["Python", "SQL", "IntelliMatch", "AutoSys", "SWIFT", "Batch Processing"],
+        title: "DevRise - Smart AI Assistant for Career-Focused Developers",
+        category: "Full Stack · AI Assistant",
+        period: "Jul 2025 - Present",
+        status: "In Progress",
+        type: "Professional",
+        description: "Voice-activated personal assistant using React and Node.js to help developers stay focused, track progress, and prepare for technical interviews.",
+        longDescription: "Designed a voice-activated personal assistant using React and Node.js to help developers stay focused, track progress, and prepare for technical interviews. Implemented real-time voice reminders with Text-to-Speech, aiding time management through the Pomodoro technique. Developed a learning tracker that monitors progress across Data Structures, Algorithms, and System Design. Integrated job application tracking, coding challenge practice, and calendar synchronization with Firebase. Optimized performance by replacing proprietary LLMs with the Mistral API, ensuring cost-effective and scalable AI assistance. Achieved a 40% productivity improvement by automating task scheduling, reminders, and workflow management.",
+        technologies: ["React", "Node.js", "MongoDB", "Express.js", "Firebase", "Mistral API"],
         skills: [
-            { name: "Python", level: 92 },
-            { name: "SQL", level: 88 },
-            { name: "Tailwind CSS", level: 85 },
-            { name: "React JS", level: 90 },
-            { name: "Prsima", level: 80 }
+            { name: "React", level: 90 },
+            { name: "Node.js & Express", level: 88 },
+            { name: "Firebase", level: 85 },
+            { name: "Mistral API", level: 82 }
         ],
         achievements: [
-            "Creating a personal dashboard",
-            "Integrated front end with React and Tailwind CSS",
-            "Wesbite is interacted with Database to store game stats, user etc details",
-            "Implemented user authentication and profile management",
+            "Voice-activated personal assistant with React + Node.js",
+            "Real-time voice reminders with text-to-speech",
+            "Learning tracker for Data Structures, Algorithms, and System Design",
+            "Automated task scheduling and calendar sync; boosted productivity by 40%"
         ],
         links: {
-            github: "https://github.com/saakethj/gamevault-v2", // Private/Professional
+            github: "https://github.com/BadikeRaju/DevRise",
             demo: null,
-            documentation: "https://github.com/saakethj/gamevault-v2/blob/main/README.md"
+            documentation: null
         },
-        color: "#ff00ff", // Amber theme for fintech
+        color: "#ec4899",
+        gradient: "from-pink-500 to-rose-600"
+    },
+    {
+        id: 3,
+        title: "Techcaturors Content & Project Tracker",
+        category: "Full Stack · Internal Platform",
+        period: "Jul 2025 - Present",
+        status: "In Progress",
+        type: "Professional",
+        description: "Contributed to designing and developing an internal content management and project tracking platform to streamline workflows and monitor progress across teams.",
+        longDescription: "Contributed to designing and developing an internal content management and project tracking platform to streamline workflows and monitor progress across teams. Built and optimized a multi-model content generation system leveraging GPT-4, GPT-3.5, and fine-tuned models, achieving an 80% reduction in content creation time. Engineered a Retrieval-Augmented Generation (RAG) chatbot using hybrid retrieval (BM25 + Word2Vec) to enhance enterprise knowledge search, reducing repeated queries by 40%. Collaborated in agile sprints, participated in code reviews, and supported deployments to ensure software quality and delivery.",
+        technologies: ["React", "Node.js", "Express.js", "MongoDB", "GPT-4", "GPT-3.5", "REST APIs", "CI/CD"],
+        skills: [
+            { name: "Team Collaboration", level: 90 },
+            { name: "API Design", level: 88 },
+            { name: "MongoDB", level: 86 },
+            { name: "Agile Methodologies", level: 85 }
+        ],
+        achievements: [
+            "Built multi-model content generation system with 80% reduction in content creation time",
+            "Engineered RAG chatbot with hybrid retrieval, reducing repeated queries by 40%",
+            "Streamlined project workflows and task tracking across teams",
+            "Participated in agile sprints and code reviews for software quality"
+        ],
+        links: {
+            github: null,
+            demo: null,
+            documentation: null
+        },
+        color: "#f59e0b",
         gradient: "from-amber-500 to-orange-600"
+    },
+    {
+        id: 5,
+        title: "Crop Yield Prediction System",
+        category: "AI/ML · Predictive Analytics",
+        period: "2024",
+        status: "Completed",
+        type: "Academic",
+        description: "Developed a predictive model using Random Forests for crop yield forecasting with 97% accuracy.",
+        longDescription: "Developed a predictive model using Random Forests for crop yield forecasting with 97% accuracy. Designed an interface for real-time data input and yield predictions, aiding farmers in making data-driven decisions. Integrated TensorFlow-based deep learning models to compare performance and improve robustness across varying climatic conditions. Built a Flask web application with HTML and CSS for user-friendly interaction with the prediction system.",
+        technologies: ["Python", "Random Forests", "TensorFlow", "Flask", "HTML", "CSS"],
+        skills: [
+            { name: "Python", level: 90 },
+            { name: "Machine Learning", level: 88 },
+            { name: "TensorFlow", level: 85 },
+            { name: "Flask", level: 82 }
+        ],
+        achievements: [
+            "Achieved 97% accuracy in crop yield forecasting using Random Forests",
+            "Designed interface for real-time data input and yield predictions",
+            "Integrated TensorFlow-based deep learning models for performance comparison",
+            "Improved robustness across varying climatic conditions"
+        ],
+        links: {
+            github: null,
+            demo: "https://colab.research.google.com/drive/1FvvFV8JfxFXtCLAHIusZbQ0-gNoMK-Lx?usp=sharing",
+            documentation: null
+        },
+        color: "#22c55e",
+        gradient: "from-green-500 to-emerald-600"
     }
 ];
 
@@ -480,6 +510,8 @@ const ProjectsSection = () => {
                                         {activeProject.links.github && (
                                             <a
                                                 href={activeProject.links.github}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                                 className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors duration-200 text-white/80 hover:text-white border border-white/20"
                                             >
                                                 <FiGithub />
@@ -489,6 +521,8 @@ const ProjectsSection = () => {
                                         {activeProject.links.demo && (
                                             <a
                                                 href={activeProject.links.demo}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                                 className="flex items-center gap-2 px-4 py-2 rounded-lg transition-colors duration-200 text-white border-2"
                                                 style={{
                                                     backgroundColor: `${activeProject.color}20`,
@@ -660,6 +694,8 @@ const ProjectsSection = () => {
                                                 {activeProject.links.github && (
                                                     <motion.a
                                                         href={activeProject.links.github}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
                                                         whileHover={{ scale: 1.05 }}
                                                         whileTap={{ scale: 0.95 }}
                                                         className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 rounded-lg transition-colors duration-200 text-white/80 hover:text-white border border-white/20"
@@ -671,6 +707,8 @@ const ProjectsSection = () => {
                                                 {activeProject.links.demo && (
                                                     <motion.a
                                                         href={activeProject.links.demo}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
                                                         whileHover={{ scale: 1.05 }}
                                                         whileTap={{ scale: 0.95 }}
                                                         className="flex items-center gap-2 px-6 py-3 rounded-lg transition-colors duration-200 text-white border-2"
@@ -687,6 +725,8 @@ const ProjectsSection = () => {
                                                 {activeProject.links.documentation && (
                                                     <motion.a
                                                         href={activeProject.links.documentation}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
                                                         whileHover={{ scale: 1.05 }}
                                                         whileTap={{ scale: 0.95 }}
                                                         className="flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors duration-200 text-white/60 hover:text-white/80 border border-white/10"

@@ -28,45 +28,73 @@ const skillsConfig = {
   mainSkills: [
     {
       icon: <FiCode />,
-      title: 'Programming & Development',
-      skills: ['Python', 'Batch Scripting', 'SQL Development'],
+      title: 'Languages',
+      skills: ['Python', 'JavaScript', 'Java', 'C'],
       color: '#ff6b35',
-      proficiencyLevel: 'Intermediate' // Beginner, Intermediate, Advanced, Expert, Learning
+      proficiencyLevel: 'Advanced' // Beginner, Intermediate, Advanced, Expert, Learning
     },
     {
-      icon: <FiDollarSign />,
-      title: 'FinTech & Automation',
-      skills: ['IntelliMatch', 'Recollector', 'AutoSys', 'Admin', 'Reconciliation'],
+      icon: <FiMonitor />,
+      title: 'Web Technologies',
+      skills: ['React.js', 'Redux', 'Node.js', 'Express.js', 'RESTful APIs', 'HTML', 'CSS'],
       color: '#00ff88',
-      proficiencyLevel: 'Expert'
+      proficiencyLevel: 'Advanced'
     },
     {
-      icon: <FiDatabase />,
-      title: 'Data & Analytics',
-      skills: ['MySQL', 'Power BI', 'RDL Reporting', 'MongoDB'],
+      icon: <FiCloud />,
+      title: 'Cloud & DevOps',
+      skills: ['AWS', 'CI/CD', 'Docker'],
       color: '#4ecdc4',
       proficiencyLevel: 'Intermediate'
     },
     {
-      icon: <FiGitBranch />,
-      title: 'DevOps & Version Control',
-      skills: ['GIT', 'GitHub', 'BitBucket', 'CI/CD Pipelines'],
+      icon: <FiCpu />,
+      title: 'Core CS',
+      skills: ['Object-Oriented Programming (OOP)', 'Data Structures & Algorithms', 'System Design'],
       color: '#00ffff',
-      proficiencyLevel: 'Beginner'
+      proficiencyLevel: 'Advanced'
+    },
+    {
+      icon: <FiDatabase />,
+      title: 'Databases',
+      skills: ['MongoDB', 'MySQL', 'IndexedDB'],
+      color: '#ffaa00',
+      proficiencyLevel: 'Intermediate'
+    },
+    {
+      icon: <FiLayers />,
+      title: 'Agile & SDLC',
+      skills: ['Agile Methodologies', 'Software Development Lifecycle (SDLC)', 'Code Reviews', 'Debugging'],
+      color: '#9d4edd',
+      proficiencyLevel: 'Advanced'
     },
     {
       icon: <FiZap />,
-      title: 'Currently Learning',
-      skills: ['DevOps Tools', 'Kubernetes', 'Terraform', 'Ansible'],
-      color: '#ffaa00',
-      proficiencyLevel: 'Learning'
+      title: 'AI/ML',
+      skills: ['Machine Learning Fundamentals', 'Retrieval-Augmented Generation', 'Model Fine-Tuning', 'Vector Databases'],
+      color: '#ff006e',
+      proficiencyLevel: 'Intermediate'
+    },
+    {
+      icon: <FiShield />,
+      title: 'Testing & Automation',
+      skills: ['Unit & Integration Testing', 'Jest', 'Python-based Test Automation'],
+      color: '#06ffa5',
+      proficiencyLevel: 'Intermediate'
+    },
+    {
+      icon: <FiGitBranch />,
+      title: 'Tools & Others',
+      skills: ['Git', 'GitHub', 'Postman'],
+      color: '#fb5607',
+      proficiencyLevel: 'Advanced'
     },
   ],
 
   // Layout configuration - Modify these for different layouts
   layout: {
     maxCardsPerRow: 3, // Maximum cards per row before creating new row
-    cardHeight: '400px',
+    cardHeight: '380px',
     mobileCardHeight: '350px',
     gap: '20px', // Consistent gap
     maxCardWidth: '350px', // Fixed width for consistent cards
