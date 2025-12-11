@@ -37,7 +37,7 @@ const ContactSection = () => {
 
   const handleResumeDownload = () => {
     // Open Google Drive resume link in new tab
-    window.open('https://drive.google.com/file/d/136VvwADdlvZA4QjkaMh2ti-W9aZDYTzv/view?usp=sharing', '_blank');
+    window.open('https://drive.google.com/file/d/1kM1VmrtGXe8M03BWPZkEAYQIdeU4el9s/view?usp=sharing', '_blank');
   };
 
   const contactInfo = {
